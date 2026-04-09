@@ -79,6 +79,8 @@ aside {
   flex-direction: column;
   border-right: 1px solid var(--border-color);
   position: relative;
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
 }
 
 .logo {
@@ -159,14 +161,6 @@ ul li a:hover span {
   background-color: #f4f4f4;
 }
 
-/* Add these to your CSS file */
-
-aside {
-  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  overflow: hidden; /* Keeps text from spilling out during animation */
-}
-
-/* This class will be added via JS */
 aside.active {
   width: 250px;
 }
@@ -233,3 +227,5 @@ ul li a i {
 ul li a span {
   display: none;
 }
+
+/* hero */
