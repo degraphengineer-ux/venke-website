@@ -1,25 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 :root {
-  --accent-color: ;
-  --accent-dark: ;
-  --accent-hover: ;
+  /* Near-Black & Soft White Accents */
+  --accent-color: #1a1a1a; /* Deep Charcoal */
+  --accent-dark: #0d0d0d; /* Almost Black */
+  --accent-hover: #333333; /* Lighter Slate for interaction */
 
-  /* colors */
-  --background: ;
-  --primary-color: ;
-  --text-color: ;
-  --text-light: ;
-  --text-dark: ;
+  /* Base Background & Primaries */
+  --background: #fcfcfc; /* Softest "Paper" White */
+  --primary-color: #121212; /* Main Brand Color (Rich Black) */
+  --text-color: #1f1f1f; /* Primary Text */
+  --text-light: #757575; /* Subtitles/Secondary Text */
+  --text-dark: #0a0a0a; /* High Contrast Headers */
 
-  /* basic UIs */
-  --border-color: ;
-  --border-widht: ;
-  --box-shadow: ;
+  /* Structural UIs */
+  --border-color: #eeeeee; /* Very subtle separator */
+  --border-widht: 1px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft, airy shadow */
 
-  /* fonts */
-  --heading-font: ;
-  --body-font: ;
-  --optional-font: ;
+  /* Typography Pairing */
+  --heading-font: "Inter", sans-serif;
+  --body-font: "Outfit", sans-serif;
+  --optional-font: "Playfair Display", serif;
 
+  /* Weights & Scaling */
   --font-weight-lg: 900;
   --font-weight-md: 500;
   --font-weight-sm: 300;
@@ -28,7 +32,6 @@
   --font-md: 54px;
   --font-sm: 18px;
 }
-
 * {
   padding: 0;
   box-sizing: border-box;
