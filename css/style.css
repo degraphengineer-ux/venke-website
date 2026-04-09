@@ -1,25 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 :root {
-  --accent-color: ;
-  --accent-dark: ;
-  --accent-hover: ;
+  /* Near-Black & Soft White Accents */
+  --accent-color: #1a1a1a; /* Deep Charcoal */
+  --accent-dark: #0d0d0d; /* Almost Black */
+  --accent-hover: #333333; /* Lighter Slate for interaction */
 
-  /* colors */
-  --background: ;
-  --primary-color: ;
-  --text-color: ;
-  --text-light: ;
-  --text-dark: ;
+  /* Base Background & Primaries */
+  --background: #fcfcfc; /* Softest "Paper" White */
+  --primary-color: #121212; /* Main Brand Color (Rich Black) */
+  --text-color: #1f1f1f; /* Primary Text */
+  --text-light: #757575; /* Subtitles/Secondary Text */
+  --text-dark: #0a0a0a; /* High Contrast Headers */
 
-  /* basic UIs */
-  --border-color: ;
-  --border-widht: ;
-  --box-shadow: ;
+  /* Structural UIs */
+  --border-color: #eeeeee; /* Very subtle separator */
+  --border-widht: 1px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft, airy shadow */
 
-  /* fonts */
-  --heading-font: ;
-  --body-font: ;
-  --optional-font: ;
+  /* Typography Pairing */
+  --heading-font: "Inter", sans-serif;
+  --body-font: "Outfit", sans-serif;
+  --optional-font: "Playfair Display", serif;
 
+  /* Weights & Scaling */
   --font-weight-lg: 900;
   --font-weight-md: 500;
   --font-weight-sm: 300;
@@ -28,7 +32,6 @@
   --font-md: 54px;
   --font-sm: 18px;
 }
-
 * {
   padding: 0;
   box-sizing: border-box;
@@ -74,14 +77,14 @@ aside {
   height: 100vh;
   width: fit-content;
   flex-direction: column;
-  border-right: 1px solid black;
+  border-right: 1px solid var(--border-color);
   position: relative;
 }
 
 .logo {
   height: 80px;
   width: 100%;
-  background-color: black;
+  background-color: var(--accent-color);
 }
 
 .logo a {
@@ -92,8 +95,111 @@ aside {
   color: white;
 }
 
+.logo a {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--background);
+  font-weight: var(--font-weight-lg);
+}
+
+aside nav {
+  padding: 20px;
+}
+
+ul {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+  flex-direction: column;
+}
+
+ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: var(--accent-hover);
+}
+
+ul li a span {
+  display: block;
+  position: absolute;
+  left: 50px;
+  background: var(--text-dark);
+  color: var(--background);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+ul li a:hover span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
 .menu {
-  border-bottom: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.menu:hover {
+  background-color: #f4f4f4;
+}
+
+/* Add these to your CSS file */
+
+aside {
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden; /* Keeps text from spilling out during animation */
+}
+
+/* This class will be added via JS */
+aside.active {
+  width: 250px;
+}
+
+aside.active ul li a {
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+aside.active ul li a span {
+  display: block;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  background: transparent;
+  color: var(--text-color);
+  pointer-events: auto;
+}
+
+/* Rotate the menu icon when active */
+.menu i {
+  transition: transform 0.4s ease;
+  display: inline-block;
+}
+
+aside.active .menu i {
+  transform: rotate(90deg);
+}
+
+.menu {
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
   height: 80px;
   padding: 30px;
@@ -102,7 +208,28 @@ aside {
 
 ul {
   display: flex;
-  margin-top: 30px;
-  gap: 30px;
+  margin-top: 90px;
+  gap: 50px;
   flex-direction: column;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+ul li a i {
+  font-size: 24px;
+}
+
+ul li a span {
+  display: none;
 }
