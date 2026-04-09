@@ -18,4 +18,51 @@
   --heading-font: ;
   --body-font: ;
   --optional-font: ;
+
+  --font-weight-lg: 900;
+  --font-weight-md: 500;
+  --font-weight-sm: 300;
+
+  --font-lg: 80px;
+  --font-md: 54px;
+  --font-sm: 18px;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+p,
+a,
+span {
+  font-weight: var(--font-weight-md);
+  font-size: var(--font-sm);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight-lg);
+}
+
+h2,
+h3 {
+  font-weight: var(--font-weight-md);
+  font-size: var(--font-md);
 }
